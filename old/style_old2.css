@@ -141,24 +141,8 @@ h4 {
 }
 
 .featured-rooms {
-  padding: 0 0.5rem;
-  margin-bottom: 3rem;
-}
-.featured-rooms__title {
-  color: var(--color-primary);
-  margin-bottom: 0.8rem;
-}
-.featured-rooms__gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  /* grid-template-rows: min-content; */
-  /* overflow: hidden; */
-  gap: 0.5rem;
 }
 .featured-rooms__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 .featured-rooms__cation {
   margin-top: 0.1rem;
