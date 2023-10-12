@@ -3,7 +3,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
 :root {
  --color-primary: #11303f;
- --color-primary--light: #3f201125;
 }
 * {
  margin: 0;
@@ -72,23 +71,28 @@ h4 {
 
 .page-header {
  grid-column: 1/-1;
- background: center / cover no-repeat url(./img/campfire.jpg);
+ background: center / cover no-repeat url(./assets/img/campfire.jpg);
  /* aspect-ratio: 16/11; */
  /* max-height: 80vh; */
  height: min(75dvh, 75vw);
  /* min-height: 15rem; */
  /* margin-top: 1rem; */
 }
-.page-header__img {
- /* max-width: 100%; */
+.page-header--alt-img-1 {
+ background: center / cover no-repeat url(./assets/img/aview.jpg);
 }
+.page-header--alt-img-2 {
+ background: center / cover no-repeat url(./assets/img/dayfire.jpg);
+}
+
 .page-header__title {
  margin: 0.5rem 1rem 0 1rem;
  letter-spacing: 0.05em;
- color: rgba(255, 255, 255, 0.5);
+ color: rgba(255, 255, 255, 0.6);
  font-weight: normal;
  font-size: clamp(1.8rem, 8vw, 6rem);
  max-width: 9em;
+ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Cards */
@@ -103,18 +107,30 @@ h4 {
  flex: 1;
  min-width: 16rem;
  margin: 0 0.5rem;
- padding: 2rem;
+ padding: 6rem 2rem 4rem;
  text-align: center;
  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
   rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
   rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
+.card--large {
+ min-width: min(25rem, 90vw);
+}
+.card__img {
+ width: 20%;
+ margin-bottom: 1rem;
+ /* Nedan en workaround för att få rätt blå färg på ikonerna */
+ filter: invert(15%) sepia(16%) saturate(2021%) hue-rotate(155deg) brightness(91%)
+  contrast(93%);
+}
+
 .card__title {
  color: var(--color-primary);
- margin-top: 4rem;
+ /* margin-top: 4rem; */
+ margin-bottom: 4rem;
 }
 .card__text {
- margin: 4rem 0;
+ margin: 1rem 0;
 }
 
 .main-content {
@@ -128,7 +144,7 @@ h4 {
  font-size: 1.1rem;
 }
 .main-content--background {
- background: center / cover no-repeat url(./img/moln.jpg);
+ background: center / cover no-repeat url(./assets/img/moln.jpg);
 }
 .main__textbox {
  max-width: 800px;
