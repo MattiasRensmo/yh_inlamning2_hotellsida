@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&family=Ultra&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
 :root {
  --color-primary: #11303f;
 }
@@ -26,9 +25,7 @@ h4 {
  margin: 0 auto;
  display: grid;
  gap: 2rem;
-
  grid-auto-rows: auto;
- /* background-color: antiquewhite; */
 }
 
 .main-nav {
@@ -54,7 +51,6 @@ h4 {
  border-inline: solid 2px hsla(0, 0%, 0%, 0.175);
 }
 .main-nav__item--selected {
- /* border-radius: 10px 0 0 10px; */
  background-color: rgba(255, 255, 255, 0.04);
 }
 .main-nav__link {
@@ -72,11 +68,7 @@ h4 {
 .page-header {
  grid-column: 1/-1;
  background: center / cover no-repeat url(./assets/img/campfire.jpg);
- /* aspect-ratio: 16/11; */
- /* max-height: 80vh; */
  height: min(75dvh, 75vw);
- /* min-height: 15rem; */
- /* margin-top: 1rem; */
 }
 .page-header--alt-img-1 {
  background: center / cover no-repeat url(./assets/img/aview.jpg);
@@ -119,14 +111,13 @@ h4 {
 .card__img {
  width: 20%;
  margin-bottom: 1rem;
- /* Nedan en workaround för att få rätt blå färg på ikonerna */
+ /* Nedan en workaround för att få färgen #11303f på ikonerna */
  filter: invert(15%) sepia(16%) saturate(2021%) hue-rotate(155deg) brightness(91%)
   contrast(93%);
 }
 
 .card__title {
  color: var(--color-primary);
- /* margin-top: 4rem; */
  margin-bottom: 4rem;
 }
 .card__text {
@@ -156,8 +147,7 @@ h4 {
  color: var(--color-primary);
  font-size: 1.8rem;
 }
-.main-content__text {
-}
+
 .main-content__text-title {
  font-family: "Mulish", sans-serif;
  margin-top: 1.5rem;
@@ -165,8 +155,8 @@ h4 {
 
 .featured-rooms {
  padding: 0 0.5rem;
- /* margin-bottom: 3rem; */
 }
+
 .featured-rooms__title {
  color: var(--color-primary);
  margin-bottom: 0.8rem;
@@ -174,57 +164,12 @@ h4 {
 .featured-rooms__gallery {
  display: grid;
  grid-template-columns: 1fr;
- /* grid-template-rows: min-content; */
- /* overflow: hidden; */
  gap: 0.5rem;
 }
 .featured-rooms__img {
  width: 100%;
  height: 100%;
  object-fit: cover;
-}
-/* .featured-rooms__cation {
- margin-top: 0.1rem;
- z-index: 1;
- padding: 1rem;
-} */
-.footer {
- grid-column: 1/-1;
- background-color: var(--color-primary);
- color: white;
- min-height: 18rem;
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(15.5rem, max-content));
- justify-content: center;
- align-content: center;
-
- column-gap: clamp(1.5rem, 10%, 14rem);
- row-gap: 1rem;
- /* gap: 10vw; */
- padding: 2rem;
- /* padding-left: clamp(2rem, 50%, 10rem); */
-
- font-size: 1.2rem;
-}
-.footer__item {
- width: max-content;
- /* margin: 0 0.5rem; */
-}
-.footer__item--first {
- /* margin: 0 0.5rem; */
-}
-.footer__item--last {
- grid-column-end: -1;
-}
-.footer__link {
- color: white;
- text-decoration: underline;
-}
-.footer__text {
- line-height: 1.5;
-}
-.footer__title {
- font-weight: normal;
 }
 
 /* RUMSIDAN */
@@ -236,19 +181,12 @@ h4 {
  max-width: min(100%, 90vw);
 }
 .room__img {
- /* max-height: 100%; */
- /* min-width: 100%; */
  object-fit: cover;
  vertical-align: bottom;
- /* flex: 1; */
  max-width: 100%;
- /* height: 100%; */
-
- /* aspect-ratio: 1/1; */
 }
 
 .room__txt-area {
- /* flex: 1; */
  display: flex;
  flex-direction: column;
  gap: 0.5rem;
@@ -265,33 +203,15 @@ h4 {
 }
 
 .room__info {
- /* background: var(--color-primary--light); */
  border-top: 1px solid var(--color-primary);
  border-bottom: 1px solid var(--color-primary);
  color: #000;
  margin: 1rem 0;
  padding: 1rem;
- /* border-radius: 1rem; */
  display: flex;
  justify-content: space-evenly;
  gap: 1rem;
- /* box-shadow: rgba(0, 0, 0, 0.25) 1.95px 1.95px 2.6px; */
 }
-/* .room__price::before {
- background: no-repeat url("./assets/icons8-money-64.png");
- background-size: 1rem 1rem;
- display: inline-block;
- width: 1rem;
- height: 1rem;
- content: "";
- filter: invert(1);
- margin-right: 0.3rem;
-}
-.room__beds::before {
- content: "🛏";
- font-size: 1.2rem;
- margin-right: 0.3rem;
-} */
 
 /* Sök rum  */
 
@@ -299,16 +219,11 @@ h4 {
  display: flex;
  flex-direction: column;
  align-items: center;
- /* padding: 0 10%; */
 }
 .room-select__form {
- /* flex: 1 0; */
  width: min(100%, 90vw);
- /* max-width: 400px; */
- /* min-width: 300px; */
  display: flex;
  flex-direction: column;
- /* align-items: center; */
  gap: 0.5rem;
 }
 .room-select__traveldates,
@@ -320,7 +235,6 @@ h4 {
 
 .room-select__title {
  font-family: "Mulish", sans-serif;
- /* align-self: center; */
 }
 
 .room-select__selected {
@@ -330,25 +244,51 @@ h4 {
  margin-top: 0.8rem;
 }
 
-@media (max-width: 340px) {
+.footer {
+ grid-column: 1/-1;
+ background-color: var(--color-primary);
+ color: white;
+ min-height: 18rem;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(15.5rem, max-content));
+ justify-content: center;
+ align-content: center;
+
+ column-gap: clamp(1.5rem, 10%, 14rem);
+ row-gap: 1rem;
+ padding: 2rem;
+
+ font-size: 1.2rem;
+}
+.footer__item {
+ width: max-content;
+}
+
+.footer__item--last {
+ grid-column-end: -1;
+}
+.footer__link {
+ color: white;
+ text-decoration: underline;
+}
+.footer__text {
+ line-height: 1.5;
+}
+.footer__title {
+ font-weight: normal;
 }
 
 @media (min-width: 768px) {
  .room-select__form {
-  /* display: flex; */
   flex-direction: row;
   gap: 2rem;
-  /* justify-content: center; */
-
-  /* padding: 0 10%; */
  }
 
  .room {
   flex-direction: row;
  }
  .room__img {
-  /* max-width: 50%; */
-  width: clamp(400px, 50%, 610px);
+  width: clamp(25rem, 50%, 38.125rem);
  }
  .main-nav {
   flex-direction: row;
@@ -383,14 +323,12 @@ h4 {
   font-size: 3rem;
   letter-spacing: 0.15em;
  }
- .main-content__text {
-  /* font-size: 1.3rem; */
- }
 
  .main-content__text-title {
   margin-top: 2rem;
  }
 }
+
 @media (min-width: 1200px) {
  .wrapper {
   grid-template-columns: 2fr 1fr;
@@ -406,7 +344,6 @@ h4 {
   grid-row-start: 3;
  }
  .room-select__form {
-  /* display: flex; */
   flex-direction: column;
   gap: 0.5;
  }
