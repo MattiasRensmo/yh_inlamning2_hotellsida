@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&family=Ultra&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
 :root {
  --color-primary: #11303f;
+ --color-primary--light: #3f201125;
 }
 * {
  margin: 0;
@@ -25,6 +27,7 @@ h4 {
  margin: 0 auto;
  display: grid;
  gap: 2rem;
+
  grid-auto-rows: auto;
  /* background-color: antiquewhite; */
 }
@@ -115,14 +118,17 @@ h4 {
 }
 
 .main-content {
- background: center / cover no-repeat url(./img/moln.jpg);
  margin: 0 0.5rem;
  width: 100%;
  display: flex;
  flex-direction: column;
  align-items: center;
  justify-content: center;
+ gap: 4rem;
  font-size: 1.1rem;
+}
+.main-content--background {
+ background: center / cover no-repeat url(./img/moln.jpg);
 }
 .main__textbox {
  max-width: 800px;
@@ -161,11 +167,11 @@ h4 {
  height: 100%;
  object-fit: cover;
 }
-.featured-rooms__cation {
+/* .featured-rooms__cation {
  margin-top: 0.1rem;
  z-index: 1;
  padding: 1rem;
-}
+} */
 .footer {
  grid-column: 1/-1;
  background-color: var(--color-primary);
@@ -205,10 +211,129 @@ h4 {
  font-weight: normal;
 }
 
+/* RUMSIDAN */
+
+.room {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ max-width: min(100%, 90vw);
+}
+.room__img {
+ /* max-height: 100%; */
+ /* min-width: 100%; */
+ object-fit: cover;
+ vertical-align: bottom;
+ /* flex: 1; */
+ max-width: 100%;
+ /* height: 100%; */
+
+ /* aspect-ratio: 1/1; */
+}
+
+.room__txt-area {
+ /* flex: 1; */
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+}
+
+.room__book--btn {
+ background: var(--color-primary);
+ color: #fff;
+ margin-top: 1rem;
+ padding: 1rem;
+ border-radius: 1rem;
+ width: 10rem;
+ align-self: flex-end;
+}
+
+.room__info {
+ /* background: var(--color-primary--light); */
+ border-top: 1px solid var(--color-primary);
+ border-bottom: 1px solid var(--color-primary);
+ color: #000;
+ margin: 1rem 0;
+ padding: 1rem;
+ /* border-radius: 1rem; */
+ display: flex;
+ justify-content: space-evenly;
+ gap: 1rem;
+ /* box-shadow: rgba(0, 0, 0, 0.25) 1.95px 1.95px 2.6px; */
+}
+/* .room__price::before {
+ background: no-repeat url("./assets/icons8-money-64.png");
+ background-size: 1rem 1rem;
+ display: inline-block;
+ width: 1rem;
+ height: 1rem;
+ content: "";
+ filter: invert(1);
+ margin-right: 0.3rem;
+}
+.room__beds::before {
+ content: "🛏";
+ font-size: 1.2rem;
+ margin-right: 0.3rem;
+} */
+
+/* Sök rum  */
+
+.room-select {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ /* padding: 0 10%; */
+}
+.room-select__form {
+ /* flex: 1 0; */
+ width: min(100%, 90vw);
+ /* max-width: 400px; */
+ /* min-width: 300px; */
+ display: flex;
+ flex-direction: column;
+ /* align-items: center; */
+ gap: 0.5rem;
+}
+.room-select__traveldates,
+.room-select__settings {
+ display: flex;
+ flex-direction: column;
+ width: 90%;
+}
+
+.room-select__title {
+ font-family: "Mulish", sans-serif;
+ /* align-self: center; */
+}
+
+.room-select__selected {
+ font-weight: 900;
+}
+.room-select__label {
+ margin-top: 0.8rem;
+}
+
 @media (max-width: 340px) {
 }
 
 @media (min-width: 768px) {
+ .room-select__form {
+  /* display: flex; */
+  flex-direction: row;
+  gap: 2rem;
+  /* justify-content: center; */
+
+  /* padding: 0 10%; */
+ }
+
+ .room {
+  flex-direction: row;
+ }
+ .room__img {
+  /* max-width: 50%; */
+  width: clamp(400px, 50%, 610px);
+ }
  .main-nav {
   flex-direction: row;
   justify-content: space-between;
@@ -257,5 +382,16 @@ h4 {
  }
  .featured-rooms__gallery {
   grid-template-columns: repeat(1, 1fr);
+ }
+ .room-select {
+  grid-column-end: -1;
+ }
+ .main-content--lift {
+  grid-row-start: 3;
+ }
+ .room-select__form {
+  /* display: flex; */
+  flex-direction: column;
+  gap: 0.5;
  }
 }

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="sv">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bonz.ai - Vildmarksupplevelser i världsklass</title>
+  <link rel="stylesheet" href="./../style.css" />
+  <link
+   rel="shortcut icon"
+   href="../assets/logo/bonz.ai-logo-black-symbol.png"
+   type="image/x-icon" />
+ </head>
+
+ <body>
+  <div class="wrapper">
+   <nav class="main-nav">
+    <ul class="main-nav__list">
+     <li class="main-nav__item">
+      <a class="main-nav__link" href="/">Hem</a>
+     </li>
+     <li class="main-nav__item main-nav__item--middle main-nav__item--selected">
+      <a class="main-nav__link" href="#">Våra rum</a>
+     </li>
+     <li class="main-nav__item">
+      <a class="main-nav__link" href="#">Så fungerar det</a>
+     </li>
+    </ul>
+    <img
+     class="main-nav__logo"
+     src="../assets/logo/bonz.ai-logo-white-landscape.png"
+     alt="Logotype bonz.ai" />
+    <img
+     class="main-nav__logo main-nav__logo--portrait"
+     src="../assets/logo/bonz.ai-logo-white-portrait.png"
+     alt="Logotype bonz.ai" />
+   </nav>
+
+   <header class="page-header">
+    <h1 class="page-header__title">Sov i vildmarken</h1>
+   </header>
+
+   <aside class="room-select">
+    <form class="room-select__form" action="">
+     <div class="room-select__traveldates">
+      <h2 class="room-select__title">Sök rum</h2>
+      <label class="room-select__label" for="arrival">Ankomst:</label>
+      <input type="date" id="arrival" name="arrival" />
+      <label class="room-select__label" for="departure">Avresa:</label>
+      <input type="date" id="departure" name="departure" />
+     </div>
+     <div class="room-select__settings">
+      <label class="room-select__label" for="num_beds"
+       >Antal sängplatser: <span class="room-select__selected">3</span></label
+      >
+      <input type="range" min="1" max="6" value="3" class="slider" id="num_beds" />
+      <label class="room-select__label" for="low-price"
+       >Lägsta pris: <span class="room-select__selected">0</span></label
+      >
+      <input
+       type="range"
+       min="0"
+       max="3000"
+       value="3"
+       class="slider"
+       id="low-price" />
+      <label class="room-select__label" for="high-price"
+       >Högsta pris: <span class="room-select__selected">3000</span></label
+      >
+      <input
+       type="range"
+       min="0"
+       max="3000"
+       value="3000"
+       class="slider"
+       id="high-price" />
+     </div>
+    </form>
+   </aside>
+
+   <main class="main-content main-content--lift">
+    <article class="room" id="room__tent">
+     <img class="room__img" src="../img/talt.jpg" alt="Tält" />
+     <section class="room__txt-area">
+      <h2 class="room__title">Tält</h2>
+      <summary class="room__info">
+       <span class="room__price">800 kr/natt</span>
+       <span class="room__beds">2 bäddar</span>
+      </summary>
+      <p class="room__text">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quidem autem
+       odit ipsa nemo quisquam sint, eius velit eaque a ea, sapiente cum doloremque?
+       Illo vel cumque accusamus sit ipsam.
+      </p>
+      <button class="room__book--btn">BOKA</button>
+     </section>
+    </article>
+
+    <article class="room" id="room__glamping">
+     <img class="room__img" src="../img/glamping.jpg" alt="Glamping" />
+     <section class="room__txt-area">
+      <h2 class="room__title">Glamping</h2>
+      <summary class="room__info">
+       <span class="room__price">1200 kr/natt</span>
+       <span class="room__beds">4 bäddar</span>
+      </summary>
+      <p class="room__text">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quidem autem
+       odit ipsa nemo quisquam sint, eius velit eaque a ea, sapiente cum doloremque?
+       Illo vel cumque accusamus sit ipsam.
+      </p>
+      <button class="room__book--btn">BOKA</button>
+     </section>
+    </article>
+
+    <article class="room" id="room__hut">
+     <img class="room__img" src="../img/stuga.jpg" alt="Rymndbollar" />
+
+     <section class="room__txt-area">
+      <h2 class="room__title">Stuga</h2>
+      <summary class="room__info">
+       <span class="room__price">1600 kr/natt</span>
+       <span class="room__beds">2 bäddar</span>
+      </summary>
+      <p class="room__text">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quidem autem
+       odit ipsa nemo quisquam sint, eius velit eaque a ea, sapiente cum doloremque?
+       Illo vel cumque accusamus sit ipsam.
+      </p>
+      <button class="room__book--btn">BOKA</button>
+     </section>
+    </article>
+    <article class="room" id="room__spaceballs">
+     <img class="room__img" src="../img/spaceballs.jpg" alt="Rymndbollar" />
+     <section class="room__txt-area">
+      <h2 class="room__title">Rymndbollar</h2>
+      <summary class="room__info">
+       <span class="room__price">2400 kr/natt</span>
+       <span class="room__beds">6 bäddar</span>
+      </summary>
+      <p class="room__text">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quidem autem
+       odit ipsa nemo quisquam sint, eius velit eaque a ea, sapiente cum doloremque?
+       Illo vel cumque accusamus sit ipsam.
+      </p>
+      <button class="room__book--btn">BOKA</button>
+     </section>
+    </article>
+   </main>
+
+   <footer class="footer">
+    <section class="footer__item footer__item--first">
+     <h2 class="footer__title">Besök oss</h2>
+     <p class="footer__text">bonz.ai</p>
+     <p class="footer__text">Stora skogsvägen 17</p>
+     <p class="footer__text">702 42 Örebro</p>
+    </section>
+    <section class="footer__item">
+     <h2 class="footer__title">Ring oss</h2>
+     <p class="footer__text">
+      Receptionen:
+      <a class="footer__link" href="tel:+46000000000">019-22&nbsp;33&nbsp;44</a>
+     </p>
+     <p class="footer__text">
+      Köket:
+      <a class="footer__link" href="tel:+46000000000">019-22&nbsp;33&nbsp;45</a>
+     </p>
+    </section>
+    <section class="footer__item footer__item--last">
+     <h2 class="footer__title">Maila oss</h2>
+     <p class="footer__text">
+      <a href="mailto:info@bonz.ai" class="footer__link">info@bonz.ai</a>
+     </p>
+    </section>
+   </footer>
+  </div>
+ </body>
+</html>
