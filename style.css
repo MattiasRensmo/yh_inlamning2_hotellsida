@@ -272,6 +272,7 @@ h4 {
 }
 .footer__item {
  width: max-content;
+ font-style: normal;
 }
 .footer__item--last {
  grid-column-end: -1;
