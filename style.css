@@ -8,8 +8,10 @@
  padding: 0;
  box-sizing: border-box;
 }
+
 body {
  font-family: "Mulish", sans-serif;
+ overflow-x: hidden; /* Gör ingen plats för scrollbar*/
 }
 
 h1,
@@ -20,7 +22,7 @@ h4 {
 }
 
 .wrapper {
- width: 100%;
+ width: 100vw;
  max-width: 1600px;
  margin: 0 auto;
  display: grid;
@@ -28,7 +30,7 @@ h4 {
  grid-auto-rows: auto;
 }
 
-.main-nav {
+.nav {
  grid-column: 1/-1;
  background-color: var(--color-primary);
  padding: 1rem 0;
@@ -37,46 +39,48 @@ h4 {
  align-items: center;
  gap: 1rem;
 }
-.main-nav__list {
+.nav__list {
  display: flex;
  align-items: center;
  justify-content: center;
  list-style-type: none;
 }
-.main-nav__item {
+.nav__item {
  padding: 0.3rem 1rem;
  text-align: center;
 }
-.main-nav__item--middle {
+.nav__item--middle {
  border-inline: solid 2px hsla(0, 0%, 0%, 0.175);
 }
-.main-nav__item--selected {
+.nav__item--selected {
  background-color: rgba(255, 255, 255, 0.04);
 }
-.main-nav__link {
+.nav__link {
  color: #fff;
  text-decoration: none;
 }
-.main-nav__logo {
+.nav__logo {
  display: none;
  max-height: 4rem;
 }
-.main-nav__logo--portrait {
+.nav__logo--portrait {
  display: block;
 }
 
 .page-header {
  grid-column: 1/-1;
- background: center / cover no-repeat url(./assets/img/campfire.jpg);
+ background-image: url(./assets/img/campfire.jpg);
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
  height: min(75dvh, 75vw);
 }
 .page-header--alt-img-1 {
- background: center / cover no-repeat url(./assets/img/aview.jpg);
+ background-image: url(./assets/img/aview.jpg);
 }
 .page-header--alt-img-2 {
- background: center / cover no-repeat url(./assets/img/dayfire.jpg);
+ background-image: url(./assets/img/dayfire.jpg);
 }
-
 .page-header__title {
  margin: 0.5rem 1rem 0 1rem;
  letter-spacing: 0.05em;
@@ -88,7 +92,6 @@ h4 {
 }
 
 /* Cards */
-
 .card-container {
  grid-column: 1/-1;
  display: flex;
@@ -111,11 +114,10 @@ h4 {
 .card__img {
  width: 20%;
  margin-bottom: 1rem;
- /* Nedan en workaround för att få färgen #11303f på ikonerna */
+ /* Konverterar färgen svart till #11303f på ikonerna */
  filter: invert(15%) sepia(16%) saturate(2021%) hue-rotate(155deg) brightness(91%)
   contrast(93%);
 }
-
 .card__title {
  color: var(--color-primary);
  margin-bottom: 4rem;
@@ -124,7 +126,8 @@ h4 {
  margin: 1rem 0;
 }
 
-.main-content {
+/* Main content  */
+.main {
  margin: 0 0.5rem;
  width: 100%;
  display: flex;
@@ -134,7 +137,7 @@ h4 {
  gap: 4rem;
  font-size: 1.1rem;
 }
-.main-content--background {
+.main--background {
  background: center / cover no-repeat url(./assets/img/moln.jpg);
 }
 .main__textbox {
@@ -143,20 +146,19 @@ h4 {
  padding: 0.5rem;
  background: rgba(255, 255, 255, 0.5);
 }
-.main-content__title {
+.main__title {
  color: var(--color-primary);
  font-size: 1.8rem;
 }
-
-.main-content__text-title {
+.main__text-title {
  font-family: "Mulish", sans-serif;
  margin-top: 1.5rem;
 }
 
+/* Rum i urval */
 .featured-rooms {
  padding: 0 0.5rem;
 }
-
 .featured-rooms__title {
  color: var(--color-primary);
  margin-bottom: 0.8rem;
@@ -172,8 +174,7 @@ h4 {
  object-fit: cover;
 }
 
-/* RUMSIDAN */
-
+/* Detaljerad lista med rum */
 .room {
  display: flex;
  flex-direction: column;
@@ -185,13 +186,14 @@ h4 {
  vertical-align: bottom;
  max-width: 100%;
 }
-
+.room__title {
+ letter-spacing: 0.05em;
+}
 .room__txt-area {
  display: flex;
  flex-direction: column;
  gap: 0.5rem;
 }
-
 .room__book--btn {
  background: var(--color-primary);
  color: #fff;
@@ -201,7 +203,6 @@ h4 {
  width: 10rem;
  align-self: flex-end;
 }
-
 .room__info {
  border-top: 1px solid var(--color-primary);
  border-bottom: 1px solid var(--color-primary);
@@ -214,8 +215,8 @@ h4 {
 }
 
 /* Sök rum  */
-
 .room-select {
+ margin: 0 2rem 2rem;
  display: flex;
  flex-direction: column;
  align-items: center;
@@ -230,13 +231,12 @@ h4 {
 .room-select__settings {
  display: flex;
  flex-direction: column;
+ justify-content: space-between;
  width: 90%;
 }
-
 .room-select__title {
  font-family: "Mulish", sans-serif;
 }
-
 .room-select__selected {
  font-weight: 900;
 }
@@ -244,26 +244,26 @@ h4 {
  margin-top: 0.8rem;
 }
 
+/* Footer */
 .footer {
  grid-column: 1/-1;
- background-color: var(--color-primary);
- color: white;
  min-height: 18rem;
+
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(15.5rem, max-content));
  justify-content: center;
  align-content: center;
-
  column-gap: clamp(1.5rem, 10%, 14rem);
  row-gap: 1rem;
- padding: 2rem;
 
+ padding: 2rem;
+ background-color: var(--color-primary);
+ color: white;
  font-size: 1.2rem;
 }
 .footer__item {
  width: max-content;
 }
-
 .footer__item--last {
  grid-column-end: -1;
 }
@@ -279,53 +279,51 @@ h4 {
 }
 
 @media (min-width: 768px) {
- .room-select__form {
+ .nav {
   flex-direction: row;
-  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1rem 1rem;
  }
-
+ .nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+ }
+ .nav__item {
+  font-size: 1.2rem;
+ }
+ .nav__logo {
+  display: block;
+ }
+ .nav__logo--portrait {
+  display: none;
+ }
+ .main {
+  margin: 0 auto;
+ }
+ .main__title {
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+ }
+ .main__text-title {
+  margin-top: 2rem;
+ }
+ /* Rum i urval */
+ .featured-rooms__gallery {
+  grid-template-columns: repeat(3, 1fr);
+ }
+ /* Detaljerad rumslista */
  .room {
   flex-direction: row;
  }
  .room__img {
   width: clamp(25rem, 50%, 38.125rem);
  }
- .main-nav {
+ .room-select__form {
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 1rem 1rem;
- }
- .main-nav__list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style-type: none;
- }
- .main-nav__item {
-  font-size: 1.2rem;
- }
-
- .main-nav__logo {
-  display: block;
- }
- .main-nav__logo--portrait {
-  display: none;
- }
-
- .featured-rooms__gallery {
-  grid-template-columns: repeat(3, 1fr);
- }
- .main-content {
-  margin: 0 auto;
- }
- .main-content__title {
-  font-size: 3rem;
-  letter-spacing: 0.15em;
- }
-
- .main-content__text-title {
-  margin-top: 2rem;
+  gap: 2rem;
  }
 }
 
@@ -334,17 +332,19 @@ h4 {
   grid-template-columns: 2fr 1fr;
   padding: 0 2rem;
  }
+ .main--lift {
+  grid-row-start: 3;
+ }
+ /* Rum i urval */
  .featured-rooms__gallery {
   grid-template-columns: repeat(1, 1fr);
  }
+ /* Detaljerad rumslista */
  .room-select {
   grid-column-end: -1;
  }
- .main-content--lift {
-  grid-row-start: 3;
- }
  .room-select__form {
   flex-direction: column;
-  gap: 0.5;
+  gap: 0.5rem;
  }
 }
